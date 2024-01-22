@@ -1,6 +1,6 @@
-Card Calculator
+This is a Blazor Web Assembley application used to calculate a score in a hand of cards.
 
-This is a Blazor Web Assembley application used to calculate a score in a hand of cards.  The card suit adds a multiplier based on this order:
+The card suit adds a multiplier based on this order:
 - Club: Multiply by 1
 - Diamond: Multiply by 2
 - Heart: Multiply by 3
