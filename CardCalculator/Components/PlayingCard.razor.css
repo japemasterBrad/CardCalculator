@@ -1,88 +1,95 @@
 ﻿#card {
-  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(247,247,247,1) 100%);
-  width: 220px;
-  height: 320px;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  border-radius: 13px;
+	background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(247,247,247,1) 100%);
+	width: 220px;
+	height: 320px;
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	border-radius: 13px;
+	font-family: Arial;
 }
 
 /*ALL ROWS*/
 .row {
-  display: flex;
-  justify-content: space-evenly;
+	display: flex;
+	justify-content: space-evenly;
 }
 
 .rowContent {
-  display: flex;
-  justify-content: space-evenly;
+	display: flex;
+	justify-content: space-evenly;
 }
 
 .suit {
-  background-color: red;
-  width: 50px;
-  image-rendering:auto;
+	background-color: red;
+	width: 50px;
+	image-rendering: auto;
 }
 
 /*TOP*/
 .topRow {
-  display: flex;
-  justify-content: right;
+	display: flex;
+	justify-content: right;
 }
 
 .rowContent {
-  display: flexbox;
-  flex-direction: row;
+	display: flexbox;
+	flex-direction: row;
 }
 
 .topRow .cardValue {
-  justify-content: right;
+	justify-content: right;
 }
 
 /*CENTER*/
 .centerRow {
-  position: relative;
-  top: -20px;
-
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	top: -15px;
 }
 
 .centerValue {
-  text-align: center;
-  margin-top: 65px;
-  font-weight: 900;
-  flex-direction: column;
-  text-shadow: 3px 3px;
+	text-align: center;
+	margin-top: 75px;
+	font-weight: 900;
+	flex-direction: column;
+	text-shadow: 3px 3px;
 }
 
 .centerRow h4 {
-  text-align: center;
-  font-weight: 900;
-  font-size:20px;
+	text-align: center;
+	font-weight: 900;
+	font-size: 20px;
+}
+
+.centerRow .suitPrint {
+	margin-top: -15px;
 }
 
 /*BOTTOM*/
 .bottomRow {
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  bottom: -40px;
+	display: flex;
+	flex-direction: row;
+	position: relative;
+	bottom: -30px;
+	justify-content: left;
 }
 
 .bottomRow .cardValue {
-  justify-content: left;
+	justify-content: left;
 }
 
 .joker {
-  position: relative;
-  top: -5px;
+	position: relative;
+	top: -5px;
 }
 
 
 .redCard {
-  color: red;
+	color: red;
 }
 
 .blackCard {
-  color: black;
+	color: black;
 }
