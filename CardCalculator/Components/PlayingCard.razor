@@ -1,0 +1,68 @@
+﻿
+<div id="card">
+	<div class="topRow row">
+		@if (playingCard.Suit == "S" || playingCard.Suit == "C" && playingCard.isJoker == false)
+		{
+			<h3 class="cardValue rowContent blackCard">@playingCard.Value @playingCard.Suit</h3>
+		}
+		else if (playingCard.Suit == "D" || playingCard.Suit == "H" && playingCard.isJoker == false)
+		{
+			<h3 class="cardValue rowContent redCard">@playingCard.Value @playingCard.Suit</h3>
+		}
+		else if (playingCard.isJoker == true)
+		{
+			<br />
+			<br />
+		}
+	</div>
+
+	<div class="centerRow row">
+		@if (playingCard.Suit == "C")
+		{
+			<h1 class="centerValue blackCard">@playingCard.Value</h1>
+			<h4 class="suitPrint blackCard">C L U B S</h4>
+		}
+		else if (playingCard.Suit == "D")
+		{
+			<h1 class="centerValue redCard">@playingCard.Value</h1>
+			<h4 class="suitPrint redCard">D I A M O N D S</h4>
+		}
+		else if (playingCard.Suit == "H")
+		{
+			<h1 class="centerValue redCard">@playingCard.Value</h1>
+			<h4 class="suitPrint redCard">H E A R T S</h4>
+		}
+		else if (playingCard.Suit == "S")
+		{
+			<h1 class="centerValue blackCard">@playingCard.Value</h1>
+			<h4 class="suitPrint blackCard">S P A D E S</h4>
+		}
+		else if (playingCard.isJoker == true)
+		{
+			<div class="joker">
+				<h1 class="centerValue blackCard">@playingCard.Value</h1>
+				<h4 class="suitPrint blackCard" stlye="font-style: italic;">J O K E R</h4>
+			</div>
+		}
+	</div>
+
+	<div class="bottomRow row">
+		@if (playingCard.Suit == "S" || playingCard.Suit == "C" && playingCard.isJoker == false)
+		{
+			<h3 class="cardValue rowContent blackCard">@playingCard.Value @playingCard.Suit</h3>
+		}
+		else if (playingCard.Suit == "D" || playingCard.Suit == "H" && playingCard.isJoker == false)
+		{
+			<h3 class="cardValue rowContent redCard">@playingCard.Value @playingCard.Suit</h3>
+		}
+		else if (playingCard.isJoker == true)
+		{
+
+		}
+	</div>
+
+</div>
+@code {
+	[Parameter]
+	public Card playingCard { get; set; }
+}

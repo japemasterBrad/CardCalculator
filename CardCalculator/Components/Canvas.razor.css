@@ -1,0 +1,142 @@
+﻿body {
+  margin: 0;
+  padding: 0;
+}
+
+#table {
+  padding-top: 10px;
+  padding-left: 10px;
+  background-color: #15440E;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#tableBT {
+  padding-top: 10px;
+  padding-left: 10px;
+  background-color: #0C042B;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.topBar {
+  background-color: #29160f;
+  height: auto;
+  padding: 20px;
+  color: white;
+  font-family: "Bernard MT Condensed";
+  display: flex;
+  border-bottom: 10px solid #9B780E;
+}
+
+.topBarBT {
+  background: linear-gradient(90deg, rgba(83,20,180,1) 0%, rgba(68,16,149,1) 100%);
+  height: auto;
+  padding: 20px;
+  color: white;
+  font-family: Arial;
+  display: flex;
+}
+
+.metalBar {
+  height: 20px;
+  background: linear-gradient(180deg, rgba(155,120,14,1) 0%, rgba(92,71,8,1) 100%);
+}
+
+.metalBarBT {
+  height: 20px;
+  background-color: #0C042C ;
+}
+
+.toggleButton {
+  font-size: 25px;
+  width: 400px;
+  align-content: center;
+  align-self: center;
+  text-align: center;
+}
+
+.toggleButtonBT {
+  font-size: 25px;
+  width: 400px;
+  align-content: center;
+  align-self: center;
+  text-align: center;
+}
+
+.inputLabel {
+  width: 600px;
+}
+
+.informationChild {
+  margin: 20px;
+  width: 50%;
+}
+
+.errorHandling {
+  font-size: 1px;
+}
+
+.displayInformation {
+  justify-content: right;
+}
+
+.playingCard {
+  flex-direction: row;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.jokerAlignment {
+  position: relative;
+  top: 15px;
+}
+
+.additionPlaceCard {
+  margin-top: 25px;
+  background-color: #271902;
+  border: 7px solid rgba(155,120,14,1);
+  width: 120px;
+  height: 108px;
+  text-align: center;
+  padding-top: 16px;
+  justify-content: center;
+  position: relative;
+  top: 10px;
+  left: 50px;
+}
+
+.additionPlaceCardBT {
+  margin-top: 25px;
+  background-color: rgba(83,20,180,1);
+  border: 7px solid #0C042C;
+  width: 120px;
+  height: 108px;
+  text-align: center;
+  padding-top: 16px;
+  justify-content: center;
+  position: relative;
+  top: 10px;
+  left: 50px;
+}
+
+.cardAddition {
+  color: white;
+  font-weight: 500px;
+  font-family: Arial;
+}
+
+@font-face {
+  font-family: "Test";
+  src: url(/wwwroot/JqkasWild-w1YD6.ttf) format("truetype");
+}

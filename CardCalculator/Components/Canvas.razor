@@ -1,0 +1,95 @@
+﻿
+<div class="@topBarClass">
+	<div class="entry informationChild">
+		<h1 class="inputLabel">Input your Cards as a String</h1>
+		<input @bind="_cardInput" type="text" placeholder="eg. AS, TC, KD, JK" />
+		<button @onclick="() => CalculateCardInput()">Calculate Score</button>
+	</div>
+	<div class="errorHandling informationChild">
+		<h2>@CardCalculator.ErrorMessage</h2>
+	</div>
+	<div class="displayInformation informationChild">
+		<h2>Final Score of Hand</h2>
+		<h3>@FinalScore</h3>
+	</div>
+	<div class="@toggleButtonClass">
+		<button @onclick="() => ToggleColourScheme()">Click Me</button>
+	</div>
+</div>
+<div class="@metalBarClass"></div>
+<div id="@tableClass">
+	@foreach (var item in _cards)
+	{
+		@foreach (var list in item)
+		{
+			<div class="playingCard">
+				<PlayingCard playingCard="list"></PlayingCard>
+				@if (list.isJoker == false)
+				{
+					<div class="@additionalPlaceCardClass">
+						<h4 class="cardAddition">@cardCalc.CheckValue(cardString: list.Value, cardObject: null) x @cardCalc.CheckMultiplier(cardString: $"{list.Value}{list.Suit}", cardObject: null)<br />@(@cardCalc.CheckValue(cardString: list.Value, cardObject: null) * @cardCalc.CheckMultiplier(cardString: $"{list.Value}{list.Suit}", cardObject: null))</h4>
+					</div>
+				}
+				else
+				{
+					<div class="@additionalPlaceCardClass">
+						<h4 class="cardAddition jokerAlignment">x2</h4>
+					</div>
+				}
+			</div>
+		}
+	}
+</div>
+
+@code {
+	public void ToggleColourScheme()
+	{
+		if (pageToggled == false)
+		{
+			pageToggled = true;
+			topBarClass = "topBarBT";
+			metalBarClass = "metalBarBT";
+			tableClass = "tableBT";
+			toggleButtonClass = "toggleButtonBT";
+			additionalPlaceCardClass = "additionPlaceCardBT";
+		}
+		else if (pageToggled == true)
+		{
+			pageToggled = false;
+			topBarClass = "topBar";
+			metalBarClass = "metalBar";
+			tableClass = "table";
+			toggleButtonClass = "toggleButton";
+			additionalPlaceCardClass = "additionPlaceCard";
+		}
+
+		Console.WriteLine(pageToggled);
+	}
+
+	public void CalculateCardInput()
+	{
+		if (_cardInput.Equals(""))
+			CardCalculator.ErrorMessage = Exceptions.EmptyHand;
+		else if (!_cardInput.Equals(""))
+			CardCalculator.ErrorMessage = Exceptions.NoException;
+
+		cardCalc = new CardCalculator(_cardInput);
+		_cards = cardCalc.GetCardList();
+		FinalScore = CardCalculator.FinalScore;
+	}
+
+	[Parameter]
+	public string _cardInput { get; set; } = string.Empty;
+	public List<List<Card>>? _cards { get; set; } = new List<List<Card>>();
+	public int FinalScore { get; set; } = 0;
+	CardCalculator cardCalc = new CardCalculator();
+	bool pageToggled { get; set; } = true;
+
+	public string topBarClass { get; set; } = "topBar";
+	public string metalBarClass { get; set; } = "metalBar";
+	public string tableClass { get; set; } = "table";
+	public string toggleButtonClass { get; set; } = "toggleButton";
+	public string additionalPlaceCardClass { get; set; } = "additionPlaceCard";
+
+	private string _errorMessage = CardCalculator.ErrorMessage;
+}
